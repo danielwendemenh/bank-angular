@@ -1,0 +1,45 @@
+<div class="model-nav-outlet">
+  <div class="secmenu" (click)="togglesecmenu()">
+    <h2>Business models</h2>
+    <ul>
+      <li>
+        <a
+          [routerLink]="['/businessmodels', { outlets: { model: 'gramm' } }]"
+          routerLinkActive="active"
+          >Gramm Leach–Bliley Act</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/businessmodels', { outlets: { model: 'cross' } }]"
+          routerLinkActive="active"
+          >Cross selling</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/businessmodels', { outlets: { model: 'risk' } }]"
+          routerLinkActive="active"
+          >Risk based pricing</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/businessmodels', { outlets: { model: 'payment' } }]"
+          routerLinkActive="active"
+          >Payment processing</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="mobilesecmenu">
+    <fa-icon
+      class="ic"
+      [icon]="faChevronRight"
+      (click)="togglesecmenu()"
+    ></fa-icon>
+  </div>
+  <div class="outlets">
+    <router-outlet name="model"></router-outlet>
+  </div>
+</div>

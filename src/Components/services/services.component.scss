@@ -1,0 +1,40 @@
+.servies-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 90vh;
+  background-color: #e0e5ec;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: 1100px;
+  }
+}
+.service {
+  font-family: sans-serif;
+  font-weight: 300;
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(#000000, 0.1);
+  img {
+    width: 60%;
+  }
+  h4 {
+    max-width: 80%;
+  }
+  &:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  @media screen and (max-width: 768px) {
+    height: 300px;
+    max-width: 65%;
+  }
+}

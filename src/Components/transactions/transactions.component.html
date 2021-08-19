@@ -1,0 +1,23 @@
+<div class="balance"></div>
+<div class="transaction-container">
+  <h1>your last transactions</h1>
+  <div class="transactions">
+    <div class="transaction">
+      <p>Action number</p>
+      <p>Type</p>
+      <p>Date</p>
+      <p>Amount</p>
+    </div>
+    <div
+      class="transaction"
+      *ngFor="let transaction of transactions; let i = index"
+    >
+      <p>{{ transaction.actionnumber | json }}</p>
+      <p>{{ transaction.type }}</p>
+      <p>{{ transaction.date }}</p>
+      <p [ngClass]="transaction.type == 'Income' ? 'income' : 'outcome'">
+        {{ transaction.amount | json }}
+      </p>
+    </div>
+  </div>
+</div>

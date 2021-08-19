@@ -1,0 +1,92 @@
+<div class="form" *ngIf="!isSignedin">
+  <form class="log" [formGroup]="logform" (ngSubmit)="onSubmitlog()">
+    <div class="log-row">
+      <img src="../../assets/images/worker.png" class="avatar" />
+    </div>
+    <div class="log-row">
+      <div class="log-row-holder">
+        <input
+          formControlName="email"
+          class="inp"
+          autocomplete="on"
+          placeholder="email"
+          type="email"
+          name="email"
+          id="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          required
+        />
+      </div>
+      <div class="log-row-holder">
+        <input
+          formControlName="password"
+          placeholder="Password"
+          type="password"
+          class="inp"
+          autocomplete="off"
+          required
+        />
+      </div>
+    </div>
+    <div class="box-btn log-row">
+      <button class="btn">Log in</button>
+    </div>
+  </form>
+  <div class="or">
+    <h1>OR</h1>
+  </div>
+  <form class="sgin" [formGroup]="signform" (ngSubmit)="onSubmitlsign()">
+    <h1 style="color: red">sgin Up</h1>
+    <div class="fname">
+      <input
+        autocomplete="off"
+        placeholder="Enter Name"
+        type="text"
+        class="inp"
+        required
+      />
+      <input
+        autocomplete="off"
+        placeholder="Last Name"
+        type="text"
+        class="inp"
+        required
+      />
+    </div>
+    <div class="fname">
+      <input
+        type="password"
+        placeholder="Pick password"
+        class="inp"
+        autocomplete="off"
+        formControlName="passwordSignup"
+        required
+      />
+    </div>
+    <div class="mail">
+      <input
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        formControlName="emailSignup"
+        type="email"
+        placeholder="@gmail.com"
+        class="inp solo"
+        autocomplete="on"
+        required
+      />
+    </div>
+    <div class="cmail mail">
+      <input
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        formControlName="cemailSignup"
+        type="email"
+        placeholder="Confirm@gmail.com"
+        class="inp solo"
+        required
+      />
+    </div>
+    <div class="box-btn">
+      <button class="btn sginup-btn">Sgin UP</button>
+    </div>
+  </form>
+</div>
+<h1 *ngIf="isSignedin">your logged in as {{</h1>

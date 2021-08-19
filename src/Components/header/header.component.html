@@ -1,0 +1,77 @@
+<nav class="nav">
+  <h1 routerLink="/home" routerLinkActive="active" class="logo">bank</h1>
+  <ul class="nav-links">
+    <fa-icon
+      class="close-times"
+      [icon]="faTimes"
+      (click)="togglesidebar()"
+    ></fa-icon>
+    <a
+      (click)="togglesidebar()"
+      routerLink="home"
+      routerLinkActive="active"
+      class="link"
+      >Home</a
+    >
+    <a
+      (click)="togglesidebar()"
+      routerLink="services"
+      routerLinkActive="active"
+      class="link"
+      >Services</a
+    >
+    <a
+      (click)="togglesidebar()"
+      href="http://localhost:4200/businessmodels/(model:gramm)"
+      routerLinkActive="active"
+      class="link"
+      >B models
+    </a>
+    <a
+      routerLink="transactions"
+      routerLinkActive="active"
+      class="link"
+      (click)="togglesidebar()"
+      >Prev actions</a
+    >
+    <button
+      routerLink="login"
+      *ngIf="!isSignedin"
+      routerLinkActive="active"
+      class="action-btn-mobile"
+      (click)="togglesidebar()"
+    >
+      Sign In
+    </button>
+    <button
+      *ngIf="isSignedin"
+      routerLinkActive="active"
+      class="action-btn-mobile"
+      (click)="handleLogout()"
+      (click)="togglesidebar()"
+    >
+      Log out
+    </button>
+  </ul>
+  <div class="action-container">
+    <button
+      routerLink="login"
+      *ngIf="!isSignedin"
+      routerLinkActive="active"
+      class="action-btn"
+    >
+      Sign In
+    </button>
+    <button
+      *ngIf="isSignedin"
+      routerLinkActive="active"
+      class="action-btn"
+      (click)="handleLogout()"
+    >
+      Log out
+    </button>
+  </div>
+  <div class="mobile-btn-container">
+    <fa-icon [icon]="faBars" (click)="togglesidebar()"></fa-icon>
+  </div>
+</nav>
